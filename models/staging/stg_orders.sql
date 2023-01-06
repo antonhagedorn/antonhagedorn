@@ -9,14 +9,17 @@ o.ordercostprice,
 o.ordersellingprice,
 
 --from customer
+c.customerid,
 c.customername,
 c.segment,
 c.country,
 
 --product
+p.productid,
 p.category,
 p.productname,
 p.subcategory
+
 from {{ ref('raw_orders') }} as o
 
 left join {{ ref('raw_customer') }} as c
